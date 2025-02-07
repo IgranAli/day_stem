@@ -5,6 +5,13 @@ import numpy as np
 # Set page title
 st.set_page_config(page_title="Legal Researcher", layout="wide")
 
+# Define the profile information globally
+name = "Ms. Igran Abdi"
+field = "Legal"
+institution = "University of the Western Cape"
+email = "igranaliofficial@gmail.com"
+profile_pic = "path_to_your_profile_picture.jpg"  # Update with your profile picture's path or URL
+
 # Sidebar menu for navigation
 menu = st.sidebar.selectbox("Choose a section", ["Researcher Profile", "Publications", "Contact"])
 
@@ -12,16 +19,28 @@ menu = st.sidebar.selectbox("Choose a section", ["Researcher Profile", "Publicat
 if menu == "Researcher Profile":
     st.title("Researcher Profile")
     st.sidebar.header("Profile Options")
-
-    # Collect basic information
-    name = "Ms. Igran Abdi"
-    field = "Legal"
-    institution = "University of the Western Cape"
-
-    # Display basic profile information
-    st.write(f"**Name:** {name}")
-    st.write(f"**Field of Research:** {field}")
-    st.write(f"**Institution:** {institution}")
+    
+    # Create a two-column layout for profile details and image
+    col1, col2 = st.columns([1, 2])
+    
+    # Add profile picture to the first column
+    with col1:
+        st.image(profile_pic, caption=name, use_column_width=True)
+    
+    # Add profile details to the second column
+    with col2:
+        st.write(f"**Name:** {name}")
+        st.write(f"**Field of Research:** {field}")
+        st.write(f"**Institution:** {institution}")
+        st.write(f"**Email:** {email}")
+        
+        # Short Bio Section
+        st.markdown("""
+        **Short Bio:**
+        Ms. Igran Abdi is a legal researcher with a keen interest in exploring the intersection of law and technology. 
+        She is currently pursuing her studies at the University of the Western Cape and aims to contribute to legal advancements 
+        in the digital age. Her research focuses on [insert specific areas of research, e.g., AI and ethics, digital privacy laws].
+        """)
 
 elif menu == "Publications":
     st.title("Publications")
@@ -47,5 +66,5 @@ elif menu == "Publications":
 elif menu == "Contact":
     # Add a contact section
     st.header("Contact Information")
-    email = "igranaliofficial@gmail.com"
     st.write(f"You can reach {name} at {email}.")
+
