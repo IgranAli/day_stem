@@ -21,7 +21,6 @@ st.write(f"**Field of Research:** {field}")
 st.write(f"**Institution:** {institution}")
 
 elif menu == "Publications":
-    
 st.title("Publications")
 st.sidebar.header("Upload and Filter")
 
