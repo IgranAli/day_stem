@@ -6,7 +6,7 @@ import numpy as np
 st.set_page_config(page_title="Researcher Profile and STEM Data Explorer", layout="wide")
  
  # Sidebar Menu
- st.sidebar.title("Navigation")
+st.sidebar.title("Navigation")
  menu = st.sidebar.radio(
      "Go to:",
      ["Researcher Profile", "Publications", "Contact"],)
@@ -28,8 +28,8 @@ print(legal_textbooks_data)
  
  # Sections based on menu selection
  if menu == "Researcher Profile":
-     st.title("Researcher Profile")
-     st.sidebar.header("Profile Options")
+   st.title("Researcher Profile")
+   st.sidebar.header("Profile Options")
  
      # Collect basic information
      name = "Dr. Igran Abdi"
