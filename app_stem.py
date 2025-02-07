@@ -42,23 +42,6 @@ st.sidebar.header("Upload and Filter")
         else:
             st.write("Showing all publications")
 
-        # Publication trends
-        if "Year" in publications.columns:
-            st.subheader("Publication Trends")
-            year_counts = publications["Year"].value_counts().sort_index()
-            st.bar_chart(year_counts)
-        else:
-            st.write("The CSV does not have a 'Year' column to visualize trends.")
-
-elif menu == "STEM Data Explorer":
-    st.title("STEM Data Explorer")
-    st.sidebar.header("Data Selection")
-
-    # Tabbed view for STEM data
-    data_option = st.sidebar.selectbox(
-        "Choose a dataset to explore", 
-        ["International", "Criminal", "Civil"]
-
     
 
 elif menu == "Contact":
