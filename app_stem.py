@@ -7,7 +7,7 @@ st.set_page_config(page_title="Researcher Profile and STEM Data Explorer", layou
  
  # Sidebar Menu
 st.sidebar.title("Navigation")
- menu = st.sidebar.radio(
+menu = st.sidebar.radio(
      "Go to:",
      ["Researcher Profile", "Publications", "Contact"],)
 
