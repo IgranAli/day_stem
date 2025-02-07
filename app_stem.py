@@ -25,7 +25,7 @@ if menu == "Researcher Profile":
     
     # Add profile picture to the first column
     with col1:
-        st.image(profile_pic, caption=name, use_column_width=True)
+        st.image(profile_pic, caption=name, use_container_width=True)  # Updated to use_container_width
     
     # Add profile details to the second column
     with col2:
@@ -67,4 +67,3 @@ elif menu == "Contact":
     # Add a contact section
     st.header("Contact Information")
     st.write(f"You can reach {name} at {email}.")
-
