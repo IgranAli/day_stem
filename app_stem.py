@@ -10,7 +10,6 @@ name = "Ms. Igran Abdi"
 field = "Legal"
 institution = "University of the Western Cape"
 email = "igranaliofficial@gmail.com"
-profile_pic = "path_to_your_profile_picture.jpg"  # Update with your profile picture's path or URL
 
 # Sidebar menu for navigation
 menu = st.sidebar.selectbox("Choose a section", ["Researcher Profile", "Publications", "Contact"])
@@ -19,13 +18,19 @@ menu = st.sidebar.selectbox("Choose a section", ["Researcher Profile", "Publicat
 if menu == "Researcher Profile":
     st.title("Researcher Profile")
     st.sidebar.header("Profile Options")
+
+    # Add the profile picture upload functionality
+    profile_pic = st.file_uploader("Upload your profile picture", type=["jpg", "jpeg", "png"])
     
-    # Create a two-column layout for profile details and image
+    # Check if the user has uploaded an image
+    if profile_pic is not None:
+        st.image(profile_pic, caption=name, use_container_width=True)  # Display the uploaded image
+    else:
+        # If no image uploaded, show a default placeholder or warning
+        st.warning("Please upload a profile picture.")
+    
+    # Create a two-column layout for profile details
     col1, col2 = st.columns([1, 2])
-    
-    # Add profile picture to the first column
-    with col1:
-        st.image(profile_pic, caption=name, use_container_width=True)  # Updated to use_container_width
     
     # Add profile details to the second column
     with col2:
