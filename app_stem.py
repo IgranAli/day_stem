@@ -5,24 +5,27 @@ import numpy as np
 # Set page title
 st.set_page_config(page_title="Legal Researcher", layout="wide")
 
+# Sidebar menu for navigation
+menu = st.sidebar.selectbox("Choose a section", ["Researcher Profile", "Publications", "Contact"])
+
 # Sections based on menu selection
 if menu == "Researcher Profile":
     st.title("Researcher Profile")
     st.sidebar.header("Profile Options")
 
-# Collect basic information
-name = "Ms. Igran Abdi"
-field = "Legal"
-institution = "University of the Western Cape"
+    # Collect basic information
+    name = "Ms. Igran Abdi"
+    field = "Legal"
+    institution = "University of the Western Cape"
 
-# Display basic profile information
-st.write(f"**Name:** {name}")
-st.write(f"**Field of Research:** {field}")
-st.write(f"**Institution:** {institution}")
+    # Display basic profile information
+    st.write(f"**Name:** {name}")
+    st.write(f"**Field of Research:** {field}")
+    st.write(f"**Institution:** {institution}")
 
 elif menu == "Publications":
-st.title("Publications")
-st.sidebar.header("Upload and Filter")
+    st.title("Publications")
+    st.sidebar.header("Upload and Filter")
 
     # Upload publications file
     uploaded_file = st.file_uploader("Upload a CSV of Publications", type="csv")
@@ -41,13 +44,8 @@ st.sidebar.header("Upload and Filter")
         else:
             st.write("Showing all publications")
 
-    
-
 elif menu == "Contact":
     # Add a contact section
     st.header("Contact Information")
     email = "igranaliofficial@gmail.com"
     st.write(f"You can reach {name} at {email}.")
-
-
-
